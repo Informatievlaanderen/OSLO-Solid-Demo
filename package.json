@@ -1,5 +1,6 @@
 {
-  "name": "oslo-solid-demo",
+  "homepage": "http://informatievlaanderen.github.io/OSLO-Solid-Demo",
+  "name": "OSLO-Solid-Demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,7 +46,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
