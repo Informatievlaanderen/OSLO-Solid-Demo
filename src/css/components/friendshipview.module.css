@@ -1,0 +1,37 @@
+.entrycontainer {
+  margin-bottom: 30px;
+}
+
+.profilecontainer {
+  width: 75%;
+}
+
+.accept {
+  background-color: green !important;
+  border-color: green !important;
+}
+.accept:hover {
+  background-color: darkgreen !important;
+  border-color: darkgreen !important;
+}
+
+.refuse {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.refuse:hover {
+  background-color: darkred !important;
+  border-color: darkred !important;
+}
+
+.delete {
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: white !important;
+}
+.delete:hover {
+  background-color: orangered !important;
+  border-color: orangered !important;
+  color: white !important;
+}

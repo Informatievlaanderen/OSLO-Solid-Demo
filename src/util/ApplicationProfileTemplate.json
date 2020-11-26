@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://data.vlaanderen.be/context/persoon-basis.jsonld",
+    "https://data.vlaanderen.be/context/generiek-basis.jsonld",
+    {
+      "heeftCollega": "https://schema.org/knows"
+    }
+  ],
+  "@id": "",
+  "@type": "Persoon",
+  "achternaam": "",
+  "geslacht": {
+    "@id": "",
+    "@type": "http://www.w3.org/2004/02/skos/core#Concept"
+  },
+  "volledigeNaam": "",
+  "voornaam": "",
+  "heeftGeboorte": {
+    "@type": "Geboorte",
+    "datum": {
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value": ""
+    },
+    "land": {
+      "@type": "Plaats",
+      "plaatsnaam": ""
+    },
+    "plaats": {
+      "@type": "Plaats",
+      "plaatsnaam": "",
+      "geometrie": {
+        "@type": "http://www.w3.org/ns/locn#Geometry",
+        "wkt": ""
+      }
+    }
+  },
+  "heeftCollega": ""
+}

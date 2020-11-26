@@ -1,0 +1,38 @@
+.logincomponent {
+  height: 100%;
+  widows: 100%;
+  background-color: lightblue;
+}
+.center {
+  width:300px;
+  height:200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginButton {
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  color: #fff;
+  background-color: #0066cc;
+  padding: .5rem 1rem;
+  font-size: 1.15rem;
+}
+
+.loginButton:hover {
+  color: #0066cc;
+  background-color: white;
+}
