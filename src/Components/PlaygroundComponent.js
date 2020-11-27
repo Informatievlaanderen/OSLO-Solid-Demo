@@ -3,6 +3,7 @@ import {Col, Row} from "react-bootstrap";
 import BasicDataEditorComponent from "./BasicDataEditorComponent";
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import DoneIcon from '@material-ui/icons/Done';
+import PublishIcon from '@material-ui/icons/Publish';
 import Switch from "@material-ui/core/Switch";
 import withStyles from "@material-ui/core/styles/withStyles";
 import AdvancedDataEditorComponent from "./AdvancedDataEditorComponent";
@@ -199,7 +200,7 @@ const PlaygroundComponent = (props) => {
             </LoggedIn>
             <LoggedOut>
                 <Row>
-                    <Col md={1}><DoneIcon/></Col>
+                    <Col md={1}><PublishIcon/></Col>
                     <Col md={11}><h4>Step 3 — Temporarily store data in local storage</h4></Col>
                 </Row>
                 <Row>
@@ -213,8 +214,8 @@ const PlaygroundComponent = (props) => {
                     <Col md={1}></Col>
                     <Col md={11}>
                         <ButtonGroup aria-label="Basic example">
-                            <Button onClick={saveToLocalStorage} variant="primary">Save</Button>
-                            <Button onClick={deleteFromLocalStorage} variant="danger">Delete from storage</Button>
+                            <Button onClick={saveToLocalStorage} variant="primary">Save to local storage</Button>
+                            <Button onClick={deleteFromLocalStorage} variant="danger">Delete from local storage</Button>
                         </ButtonGroup>
                     </Col>
                 </Row>

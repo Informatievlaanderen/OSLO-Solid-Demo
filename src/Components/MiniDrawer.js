@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -144,7 +144,7 @@ const MiniDrawer = withWebId((props) => {
     }
   }
 
-  const sideBarItems = props.sideBarItems || ['profile', 'friendrequest', 'running', 'friendoverview', 'map', 'br', 'divider', 'playground', 'divider', 'help', 'credits']
+  const sideBarItems = props.sideBarItems || ['profile', 'friendrequest', 'running', 'friendoverview', 'map', 'upload', 'br', 'divider', 'playground', 'divider', 'help', 'credits']
   const sidebarComponents = sideBarItems.map((e, index) => getSidebarComponent(e, index));
 
   const topBarItems = props.topBarItems || ['notifications', 'help']
@@ -240,7 +240,13 @@ const MiniDrawer = withWebId((props) => {
 export default MiniDrawer
 
 const NotificationsMenuItem = (props) => {
-  const notifications = useNotifications(props.webId)
+  const notifications = useNotifications(props.webId);
+  /*let numberOfNotifications = notifications.length;
+
+  useEffect( () => {
+    numberOfNotifications = notifications.length;
+  }, [notifications]);*/
+
   return (
     <MenuItem className={props.className} onClick={() => props.setSelectedView(props.item)} key={props.index}>
       <IconButton aria-label={props.item.label} color="inherit">

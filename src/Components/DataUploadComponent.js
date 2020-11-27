@@ -28,16 +28,19 @@ const DataUploadComponent = (props) => {
     const [turtle, setTurtle] = useState('');
     const parsedURI = parseURL(props.webId)
     const [storageLocation, setStorageLocation] = useState(parsedURI.scheme + parsedURI.netLoc + '/public/');
+    const [warning, setWarning] = useState(null);
 
     const ParserJsonld = require('@rdfjs/parser-jsonld');
     const Readable = require('stream').Readable;
 
 
     useEffect( () => {
-        if(!data) return;
+        if(!data){
+            setWarning("The snippet can not be found at local storage. Did you upload it? ");
+            return;
+        }
 
-        //TODO: fix JSON object returns string
-        const snippet = JSON.parse(data);
+        const snippet = data;
         snippet['@id'] = props.webId;
         const parser = new ParserJsonld();
         const input = new Readable({
@@ -59,10 +62,16 @@ const DataUploadComponent = (props) => {
         })
     }, [data]);
 
+    const warningStyle = {
+        color: 'red',
+    };
 
-    const uploadToPod = async () => {
+
+    const uploadToPod = () => {
         const snippetId = storageLocation + 'person.ttl';
-        await putFile(snippetId, turtle);
+        putFile(snippetId, turtle).then( () => {
+            localStorage.removeItem('snippet');
+        });
     }
 
     const updateStorageLocation = (e) => {
@@ -70,10 +79,10 @@ const DataUploadComponent = (props) => {
     }
 
     return (
-        <span>
-            <Row>
-                <Col md={1}><PublishIcon/></Col>
-                <Col md={11}><h4>Step 3 — Upload data to Solid Pod</h4></Col>
+        <div className="container leftaligntext">
+            <Row className="container centeraligntext">
+                <Col md={1}/>
+                <Col md={11}><h4>Upload data to Solid Pod</h4></Col>
             </Row>
             <Row>
                 <Col md={1}/>
@@ -85,6 +94,7 @@ const DataUploadComponent = (props) => {
                 </Col>
             </Row>
             <br/>
+            {warning && <Row><Col md={1}/><Col md={11}><b style={warningStyle}>{warning}</b></Col></Row>}
             <Row>
                 <Col md={1}/>
                 <Col md={11}>
@@ -101,17 +111,11 @@ const DataUploadComponent = (props) => {
             <br/>
             <Row>
                 <Col md={1}></Col>
-                <Col md={3}>
+                <Col md={11}>
                     <Button onClick={uploadToPod}>Upload to Solid Pod</Button>
                 </Col>
-                <Col md={8}>
-                    <ButtonGroup aria-label="Basic example">
-                            <Button variant="primary">Delete from Solid Pod</Button>
-                            <Button  variant="danger">Delete from local storage</Button>
-                        </ButtonGroup>
-                </Col>
             </Row>
-        </span>
+        </div>
     )
 }
 

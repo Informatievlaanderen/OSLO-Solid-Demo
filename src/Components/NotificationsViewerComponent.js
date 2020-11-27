@@ -16,12 +16,11 @@ const NotificationsViewerComponent = (props) => {
   const [deleted, setDeleted] = useState([])
   // Sort on notification modified (= created normally) in reverse order to get newest first
   const nondeletedNotifications = notifications.filter(n => deleted.indexOf(n.metadata.id) === -1)
-  const sortednotifications = nondeletedNotifications.sort( (a, b) => new Date(b.metadata.modified) - new Date(a.metadata.modified))
-
+  const sortednotifications = nondeletedNotifications.sort( (a, b) => new Date(b.metadata.modified) - new Date(a.metadata.modified));
 
   async function deleteNotification(notificationId) {
     deleteFile(notificationId);
-    setDeleted(deleted.concat(notificationId))
+    setDeleted(deleted.concat(notificationId));
   }
 
   return (
