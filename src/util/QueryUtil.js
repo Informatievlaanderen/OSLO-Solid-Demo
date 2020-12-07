@@ -38,7 +38,6 @@ export async function createDeleteInsertProfileDataQuery(webId, oldprofile, newp
   `)
 }
 
-
 /**
  * Create patch for the status of the marriage contract proposal.
  * @param {'pending' | 'sumitted' | 'accepted' | 'refused'} newStatus

@@ -44,22 +44,21 @@ const PlaygroundComponent = (props) => {
     const [data, setData] = useState(localStorage.getItem('snippet') || null);
     const [shaclResult, setShaclResult] = useState(null);
 
-
     const classes = useStyle();
 
     const handleChange = event => {
         setChecked(event.target.checked);
     }
 
-    const handleDataFromChild = (data) => {
-        setData(data);
+    const handleDataFromChild = (update) => {
+        setData(update);
     }
 
     const validateData = () => {
         if (data) {
             setError(null);
             const body = JSON.stringify({
-                contentToValidate: new Buffer(data).toString('base64'),
+                contentToValidate: new Buffer(JSON.stringify(data)).toString('base64'),
                 embeddingMethod: "BASE64",
                 contentSyntax: 'application/ld+json',
                 validationType: SHACL_SHAPE,
@@ -78,6 +77,8 @@ const PlaygroundComponent = (props) => {
                 reader.read().then(({value, done}) => {
                     setShaclResult(decoder.decode(value));
                 });
+            }).catch( err => {
+                console.log(err);
             })
         } else {
             setError("No data was provided. Please create a snippet in order to validate it.");
@@ -90,15 +91,14 @@ const PlaygroundComponent = (props) => {
     };
 
     const saveToLocalStorage = () => {
-        if(data){
-            localStorage.setItem('snippet', data);
+        if (data) {
+            localStorage.setItem('snippet', JSON.stringify(data));
         }
     }
 
     const deleteFromLocalStorage = () => {
         localStorage.removeItem('snippet');
     }
-
 
 
     return (
@@ -114,21 +114,37 @@ const PlaygroundComponent = (props) => {
 
                 <Col md={1}></Col>
                 <Col md={11}>
-                    <p>Now that you know what a vocabulary, application profile stands for, it is your turn!</p>
+                    <p>Now that you know what a vocabulary, an application profile and implementaiton model stands for,
+                        it is your turn!</p>
                     <p>In this step, you are going to create a JSON-LD data snippet that is compliant with the
-                        application profile shown on the slides.
-                        There are 2 possibilities to create the data snippet. First, for people who are not familiar
-                        with JSON-LD, there the basic version. If you have some experience with JSON-LD, we encourage
-                        you to go with the advanced version.
-                        This version is the <a target='_blank' href='https://json-ld.org/playground/'>JSON-LD
-                            playground</a>. So open an extra tab with the application profile and start creating!
-                        When you are finished in the playground, copy your snippet in the textarea below.
+                        implementation model shown on the slides.
+                        There are 2 possibilities in order to create the data snippet.
                     </p>
                     <p>
-                        To generate a WKT string, <a target='_blank' href='https://clydedacruz.github.io/openstreetmap-wkt-playground/'>this site</a> can help.
+                        First, for people who are not familiar with JSON-LD, there is the basic version. For this demo,
+                        we recommend to use this possibilty.
                     </p>
                     <p>
-                        Spoiler! The basic version contains already most of the answer. Try not to cheat if you are
+                        For people that have some or much experience with JSON-LD, there is the advanced version. We
+                        challenge them to use the <a target='_blank' href='https://json-ld.org/playground/'>JSON-LD
+                        playground</a>. Once you are done with creating the data snippet in the JSON-LD playground, copy
+                        & past it in the textarea below.
+                    </p>
+                    <h5>Tips</h5>
+                    <p>
+                        To generate a WKT string, <a target='_blank'
+                                                     href='https://clydedacruz.github.io/openstreetmap-wkt-playground/'>this
+                        site</a> can help. Click on the <button type="button"
+                                                                className="btn btn-primary"
+                                                                style={{width: '120px'}}> Clear </button>. Then click on
+                        the <button type="button"
+                                    className="btn btn-primary"
+                                    style={{width: '120px'}}> Point </button> in order to select a point. Then navigate to your birth place on the map and click it. Normally you should see a WKT string in the textarea below the map.
+                        When working with the basic version, copy the WKT string and paste it in the WKT field.
+                    </p>
+                    <h5>Spoiler</h5>
+                    <p>
+                        The basic version contains already most of the answer. Try not to cheat if you are
                         working with the advanced version.
                     </p>
                 </Col>
@@ -188,38 +204,35 @@ const PlaygroundComponent = (props) => {
                 <Row>
                     <Col md={1}/>
                     <Col md={11}>
-                        <TextareaAutosize value={shaclResult} className={classes.root} aria-label="textarea" rowsMin={10}/>
+                        <TextareaAutosize value={shaclResult} className={classes.root} aria-label="textarea"
+                                          rowsMin={10}/>
                     </Col>
                 </Row>
                 :
                 <br/>
 
             }
-            <LoggedIn>
-                <DataUploadComponent webId={props.webId}/>
-            </LoggedIn>
-            <LoggedOut>
-                <Row>
-                    <Col md={1}><PublishIcon/></Col>
-                    <Col md={11}><h4>Step 3 — Temporarily store data in local storage</h4></Col>
-                </Row>
-                <Row>
-                    <Col md={1}/>
-                    <Col md={11}>
-                        <p>In the rest of this tutorial we are going to learn about Solid, your own data vault.</p>
-                        <p>Since you don't have your own data vault, we suggest to store your data snippet in local storage, awaiting your Solid Pod</p>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={1}></Col>
-                    <Col md={11}>
-                        <ButtonGroup aria-label="Basic example">
-                            <Button onClick={saveToLocalStorage} variant="primary">Save to local storage</Button>
-                            <Button onClick={deleteFromLocalStorage} variant="danger">Delete from local storage</Button>
-                        </ButtonGroup>
-                    </Col>
-                </Row>
-            </LoggedOut>
+            <Row>
+                <Col md={1}><PublishIcon/></Col>
+                <Col md={11}><h4>Step 3 — Temporarily store data in local storage</h4></Col>
+            </Row>
+            <Row>
+                <Col md={1}/>
+                <Col md={11}>
+                    <p>In the rest of this tutorial we are going to learn about Solid, your own data vault.</p>
+                    <p>Since you don't have your own data vault, we suggest to store your data snippet in local
+                        storage, awaiting your Solid Pod</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={1}></Col>
+                <Col md={11}>
+                    <ButtonGroup aria-label="Basic example">
+                        <Button onClick={saveToLocalStorage} variant="primary">Save to local storage</Button>
+                        <Button onClick={deleteFromLocalStorage} variant="danger">Delete from local storage</Button>
+                    </ButtonGroup>
+                </Col>
+            </Row>
 
         </div>
     );

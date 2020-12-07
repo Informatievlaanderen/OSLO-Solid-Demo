@@ -16,7 +16,7 @@ const HelpComponent = (props) => {
 
                 <Col md={1}></Col>
                 <Col md={11}>
-                    <p>Before starting this demonstration for SOLID, you are expected to created a SOLID pod.</p>
+                    <p>Before starting this demonstration for SOLID, you are expected to create a SOLID pod.</p>
                     <p>In case you do not do not yet have a SOLID pod available, you can create a pod on <a
                         href={'https://solid.community/register'}>solid community</a>.</p>
                     <p>(or using login button - choose provider - register account. But this should be explained with
@@ -60,7 +60,7 @@ const HelpComponent = (props) => {
             <br/>
 
             <Row>
-                <Col md={1}>{availableViews.requests.icon}</Col>
+                <Col md={1}>{availableViews.friendrequest.icon}</Col>
                 <Col md={11}><h4>Step 3 - Sending a friend request</h4></Col>
             </Row>
             <Row>
@@ -68,17 +68,16 @@ const HelpComponent = (props) => {
                 <Col md={11}>
                     <p>Now that your profile information is completed, you can send out friend request</p>
                     <p>To send a friend request, go to the <b>Friend request</b> tab</p>
-                    <p>You will see a form, where your information is already filled out, as one of the 2 person
+                    <p>You will see a form, where your information is already filled out, as one of the 2 persons
                         engaging this friendship</p>
-                    <p>Since a friendship requires 2 persons, you will have to find another persons webId to enter</p>
+                    <p>Since a friendship requires 2 persons, you will have to find another person's webId to enter</p>
                     <p>If a valid webId is entered, the associated profile will be shown automatically</p>
                     <p>In case this profile is incomplete, an error message will be shown. Please choose a different
                         webId, or wait for the person to complete their profile.</p>
                     <p>If all necessary information is filled in, the request is ready to be submitted.</p>
                     <p>You can use the default storage location to store the created friend request on your pod, or
                         select a custom location (please make sure the selected location is valid, and read permissions
-                        are public. If this is not the case, the people you invite will not be able to see the marriage
-                        proposal).</p>
+                        are public. If this is not the case, the people you invite will not be able to see the friend request).</p>
                     <p>Now, you can submit the friend request using <Button>Submit</Button></p>
                 </Col>
             </Row>
@@ -95,7 +94,7 @@ const HelpComponent = (props) => {
                         friend request.</p>
                     <p>These notifications can be found by clicking the notification icon
                         <IconButton aria-label={'notifications'} color="inherit">
-                            <Badge badgeContent={1} color="secondary">
+                            <Badge color="secondary">
                                 {availableViews.notifications.icon}
                             </Badge>
                         </IconButton>

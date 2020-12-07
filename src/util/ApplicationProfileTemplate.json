@@ -1,10 +1,7 @@
 {
   "@context": [
     "https://data.vlaanderen.be/context/persoon-basis.jsonld",
-    "https://data.vlaanderen.be/context/generiek-basis.jsonld",
-    {
-      "heeftCollega": "https://schema.org/knows"
-    }
+    "https://data.vlaanderen.be/context/generiek-basis.jsonld"
   ],
   "@id": "",
   "@type": "Persoon",
@@ -30,9 +27,8 @@
       "plaatsnaam": "",
       "geometrie": {
         "@type": "http://www.w3.org/ns/locn#Geometry",
-        "wkt": ""
+        "Geometrie.wkt": ""
       }
     }
-  },
-  "heeftCollega": ""
+  }
 }

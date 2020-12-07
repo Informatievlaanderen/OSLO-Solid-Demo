@@ -91,6 +91,7 @@ export async function officiateRequest(webId, contractId, contacts) {
     await updateFriendRequestStatus(contractId, "official")
 }
 
+
 /**
  * Update the status of the marriage contract proposal.
  * @param {'pending' | 'official' | 'accepted' | 'rejected'} newStatus

@@ -2,8 +2,6 @@ import React from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TextField from "@material-ui/core/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
-import Select from "@material-ui/core/Select";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
@@ -20,8 +18,10 @@ const BasicDataEditorComponent = (props) => {
     const [birthPlace, setBirthPlace] = React.useState('');
     const [birthCountry, setBirthCountry] = React.useState('');
     const [wkt, setWkt] = React.useState('');
+    const [selectedOption, setSelectedOption] = React.useState('');
 
     const handleGenderChange = (event) => {
+        setSelectedOption(event.target.value);
         let value = '';
         switch (event.target.value) {
             case "M":
@@ -73,7 +73,7 @@ const BasicDataEditorComponent = (props) => {
 
     const handleWktChange = (event) => {
         setWkt(event.target.value);
-        template["heeftGeboorte"]["plaats"]["geometrie"]["wkt"] = "<span style='background-color: #0066cc;color:white!important;'>" + event.target.value + "</span>"
+        template["heeftGeboorte"]["plaats"]["geometrie"]["Geometrie.wkt"] = "<span style='background-color: #0066cc;color:white!important;'>" + event.target.value + "</span>"
     };
 
     const handleFocusLoss = async () => {
@@ -89,7 +89,11 @@ const BasicDataEditorComponent = (props) => {
         template['heeftGeboorte']['datum']['@value'] = birthDate;
         template['heeftGeboorte']['plaats']['plaatsnaam'] = birthPlace;
         template['heeftGeboorte']['land']['plaatsnaam'] = birthCountry;
-        template['heeftGeboorte']['plaats']['geometrie']['wkt'] = wkt;
+        template['heeftGeboorte']['plaats']['geometrie']['Geometrie.wkt'] = wkt;
+    }
+
+    const handleChange = () => {
+
     }
 
     return (
@@ -98,10 +102,6 @@ const BasicDataEditorComponent = (props) => {
                 <Col md={1}/>
                 <Col md={3}>
                     <form>
-                        <div>
-                            <TextField id="identificator" label="Identificator"/>
-                        </div>
-                        <br/>
                         <div>
                             <TextField onBlur={handleFocusLoss} value={surname} required id="surname" label="Voornaam" onChange={handleSurnameChange}/>
                         </div>
@@ -116,10 +116,10 @@ const BasicDataEditorComponent = (props) => {
                         <br/>
                         <div>
                             <FormLabel required component="legend">Geslacht</FormLabel>
-                            <RadioGroup onBlur={handleFocusLoss} required row aria-label="gender" name="gender" value={gender} onChange={handleGenderChange}>
-                                <FormControlLabel value="V" control={<Radio/>} label="Vrouw"/>
-                                <FormControlLabel value="M" control={<Radio/>} label="Man"/>
-                                <FormControlLabel value="X" control={<Radio/>} label="X"/>
+                            <RadioGroup onBlur={handleFocusLoss} required row aria-label="gender" name="gender" value={selectedOption} onChange={handleGenderChange}>
+                                <FormControlLabel value="V" control={<Radio color={"primary"}/>} label="Vrouw"/>
+                                <FormControlLabel value="M" control={<Radio color={"primary"}/>} label="Man"/>
+                                <FormControlLabel value="X" control={<Radio color={"primary"}/>} label="X"/>
                             </RadioGroup>
                         </div>
                         <br/>

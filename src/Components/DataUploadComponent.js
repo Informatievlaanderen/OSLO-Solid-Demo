@@ -40,7 +40,8 @@ const DataUploadComponent = (props) => {
             return;
         }
 
-        const snippet = data;
+        console.log(data);
+        const snippet = JSON.parse(data);
         snippet['@id'] = props.webId;
         const parser = new ParserJsonld();
         const input = new Readable({
