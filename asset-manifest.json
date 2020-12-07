@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/OSLO-Solid-Demo/static/css/main.f2c35b91.chunk.css",
+    "main.js": "/OSLO-Solid-Demo/static/js/main.935ba755.chunk.js",
+    "main.js.map": "/OSLO-Solid-Demo/static/js/main.935ba755.chunk.js.map",
+    "runtime-main.js": "/OSLO-Solid-Demo/static/js/runtime-main.55351eab.js",
+    "runtime-main.js.map": "/OSLO-Solid-Demo/static/js/runtime-main.55351eab.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/OSLO-Solid-Demo/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.84f4ca88.chunk.js": "/OSLO-Solid-Demo/static/js/2.84f4ca88.chunk.js",
+    "static/js/2.84f4ca88.chunk.js.map": "/OSLO-Solid-Demo/static/js/2.84f4ca88.chunk.js.map",
+    "index.html": "/OSLO-Solid-Demo/index.html",
+    "precache-manifest.7bec8a92153284398901cc2fb8b86882.js": "/OSLO-Solid-Demo/precache-manifest.7bec8a92153284398901cc2fb8b86882.js",
+    "service-worker.js": "/OSLO-Solid-Demo/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/OSLO-Solid-Demo/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.f2c35b91.chunk.css.map": "/OSLO-Solid-Demo/static/css/main.f2c35b91.chunk.css.map",
+    "static/js/2.84f4ca88.chunk.js.LICENSE.txt": "/OSLO-Solid-Demo/static/js/2.84f4ca88.chunk.js.LICENSE.txt",
+    "static/media/idlablogo.jpg": "/OSLO-Solid-Demo/static/media/idlablogo.7fb32e69.jpg",
+    "static/media/solid_background.jpg": "/OSLO-Solid-Demo/static/media/solid_background.5969ee5b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55351eab.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.84f4ca88.chunk.js",
+    "static/css/main.f2c35b91.chunk.css",
+    "static/js/main.935ba755.chunk.js"
+  ]
+}
