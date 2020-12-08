@@ -116,8 +116,7 @@ const PlaygroundComponent = (props) => {
                 <Col md={11}>
                     <p>Now that you know what a vocabulary, an application profile and implementation model stands for,
                         it is your turn!</p>
-                    <p>In this step, you are going to create a JSON-LD data snippet that is compliant with the
-                        <a target='_blank' href='../assets/implementatiemodel.PNG'>implementation model</a> shown on the
+                    <p>In this step, you are going to create a JSON-LD data snippet that is compliant with the <a target='_blank' href='../assets/implementatiemodel.PNG'>implementation model</a> shown on the
                         slides.
                         There are 2 possibilities in order to create the data snippet.
                     </p>
