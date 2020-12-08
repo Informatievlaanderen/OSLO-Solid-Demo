@@ -38,7 +38,7 @@ function LoginComponent() {
                             Solid
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Log in met je Solid Pod. Indien je nog geen Pod heb kan je <a href="https://inrupt.net/">hier</a> of <a href="https://solid.community/">hier</a> eentje aanmaken
+                            Log in met je Solid Pod. Indien je nog geen Pod heb kan je <a href="https://inrupt.net/">hier</a> eentje aanmaken
                         </Typography>
                     </CardContent>
                 </CardActionArea>

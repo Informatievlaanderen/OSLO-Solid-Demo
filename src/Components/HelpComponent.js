@@ -18,7 +18,7 @@ const HelpComponent = (props) => {
                 <Col md={11}>
                     <p>Before starting this demonstration for SOLID, you are expected to create a SOLID pod.</p>
                     <p>In case you do not do not yet have a SOLID pod available, you can create a pod on <a
-                        href={'https://solid.community/register'}>solid community</a>.</p>
+                        href={'https://inrupt.net/'}>solid community</a>.</p>
                     <p>(or using login button - choose provider - register account. But this should be explained with
                         pictures)</p>
                 </Col>

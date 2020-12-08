@@ -77,7 +77,7 @@ const PlaygroundComponent = (props) => {
                 reader.read().then(({value, done}) => {
                     setShaclResult(decoder.decode(value));
                 });
-            }).catch( err => {
+            }).catch(err => {
                 console.log(err);
             })
         } else {
@@ -114,10 +114,11 @@ const PlaygroundComponent = (props) => {
 
                 <Col md={1}></Col>
                 <Col md={11}>
-                    <p>Now that you know what a vocabulary, an application profile and implementaiton model stands for,
+                    <p>Now that you know what a vocabulary, an application profile and implementation model stands for,
                         it is your turn!</p>
                     <p>In this step, you are going to create a JSON-LD data snippet that is compliant with the
-                        implementation model shown on the slides.
+                        <a target='_blank' href='../assets/implementatiemodel.PNG'>implementation model</a> shown on the
+                        slides.
                         There are 2 possibilities in order to create the data snippet.
                     </p>
                     <p>
@@ -126,20 +127,23 @@ const PlaygroundComponent = (props) => {
                     </p>
                     <p>
                         For people that have some or much experience with JSON-LD, there is the advanced version. We
-                        challenge them to use the <a target='_blank' href='https://json-ld.org/playground/'>JSON-LD
+                        challenge them to use the <a target='_blank' href='https://tinyurl.com/y6mf6xy6'>JSON-LD
                         playground</a>. Once you are done with creating the data snippet in the JSON-LD playground, copy
                         & past it in the textarea below.
                     </p>
-                    <h5>Tips</h5>
+                    <h5>Tips & tricks</h5>
+                    <p>1. When you choose for the advanced version, the out the <a href='https://data.vlaanderen.be/doc/applicatieprofiel/persoon-basis/#Persoon'>application profile</a> on the website to see which URIs you have to use</p>
                     <p>
-                        To generate a WKT string, <a target='_blank'
+                        2. To generate a WKT string, <a target='_blank'
                                                      href='https://clydedacruz.github.io/openstreetmap-wkt-playground/'>this
-                        site</a> can help. Click on the <button type="button"
-                                                                className="btn btn-primary"
-                                                                style={{width: '120px'}}> Clear </button>. Then click on
-                        the <button type="button"
-                                    className="btn btn-primary"
-                                    style={{width: '120px'}}> Point </button> in order to select a point. Then navigate to your birth place on the map and click it. Normally you should see a WKT string in the textarea below the map.
+                        site</a> can help. Click on <button type="button"
+                                                            className="btn btn-primary"
+                                                            style={{width: '120px'}}> Clear </button>. Then click on
+                        <button type="button"
+                                className="btn btn-primary"
+                                style={{width: '120px'}}> Point </button> in order to select a point. Then navigate to
+                        your birth place on the map and click it. Normally you should see a WKT string in the textarea
+                        below the map.
                         When working with the basic version, copy the WKT string and paste it in the WKT field.
                     </p>
                     <h5>Spoiler</h5>
