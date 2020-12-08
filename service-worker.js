@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/OSLO-Solid-Demo/precache-manifest.7bec8a92153284398901cc2fb8b86882.js"
+  "/OSLO-Solid-Demo/precache-manifest.4f1bbe3d13a2063e369aeef862b7b4e7.js"
 );
 
 self.addEventListener('message', (event) => {
