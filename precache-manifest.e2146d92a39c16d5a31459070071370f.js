@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "71333d639fc4874e573109d6380ceaec",
+    "revision": "07bc1eab6b4aaddeba77b58859c2e6b6",
     "url": "/OSLO-Solid-Demo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OSLO-Solid-Demo/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "f2f951704e385b0e4848",
+    "revision": "a0ff2ffdf6097a964fbb",
     "url": "/OSLO-Solid-Demo/static/css/main.f2c35b91.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OSLO-Solid-Demo/static/js/2.84f4ca88.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f2f951704e385b0e4848",
-    "url": "/OSLO-Solid-Demo/static/js/main.483b8565.chunk.js"
+    "revision": "a0ff2ffdf6097a964fbb",
+    "url": "/OSLO-Solid-Demo/static/js/main.b6d70143.chunk.js"
   },
   {
     "revision": "0d8241c9e0b1f96bf25f",
